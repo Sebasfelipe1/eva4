@@ -1,0 +1,17 @@
+<html>
+
+
+    <body class = "container mt-5">
+        <div class = "alert alert-info display-1 text-center">Registrar Cliente</div>
+
+        <form method='post'>
+            {{ form.as_p }}
+            {% csrf_token %} <br>
+        <button type= "sumbit" value="AGREGAR CLIENTE"> <br>
+        </form><br>
+            <br>
+         
+
+    </body>
+    <a href="../listadocliente" class="btn btn.info m-5">Clientes</a>
+    </html>

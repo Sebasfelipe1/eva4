@@ -1,0 +1,54 @@
+
+<html>
+
+
+    <body class="container mt-5">
+        <div class="alert alert-info display-1 text-center">Listado Personal Recursos humanos</div>
+
+        {% if rrhh %}
+
+        <table class ="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>id</id>
+                    <th>Nombre </th> 
+                    <th>Apellido paterno</th> 
+                    <th>Apellido materno</th> 
+                    <th>rut</th> 
+                    <th>Sector</th> 
+                    <th>seccion</th> 
+                    <th>--</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in rrhh %}
+                <tr>
+                    <td>{{ a.id }}
+                    <td>{{ a.nombre_personal }}</td>
+                    <td>{{ a.apellido_parterno }}</td>
+                    <td>{{ a.apellido_materno }}</td>
+                    <td>{{ a.rut }}</td>   
+                    <td>{{ a.sector }}</td>  
+                    <td>{{ a.seccion }}</td>  
+                    <td><a href="/actualizarRRHH/ {{ a.id }}" class="btn btn-success btn-sm">Actualizar></td>
+                    <td><a href="/eliminarRRHH/ {{ a.id }}" class="btn btn-success btn-sm">Eliminar</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        
+        <div class="alert alert-primary" role="alert">
+            <strong>No se encuentra personal en el sistema</strong>
+        </div>
+
+        {% endif%}
+
+        <a href="../" class = "btn btn-danger">Volver </a> <br>
+        <a href="../agregarRRHH" class = "btn btn-info float-end">Agregar Personal</a> <br>
+        
+    </body>
+    </html>

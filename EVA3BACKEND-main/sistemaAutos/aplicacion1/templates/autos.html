@@ -1,0 +1,54 @@
+
+<html>
+
+
+    <body class="container mt-5">
+        <div class="alert alert-info display-1 text-center">Listado Autos</div>
+
+        {% if autos %}
+
+        <table class ="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>id</id>
+                    <th>marca_auto</th> 
+                    <th>ruedas</th> 
+                    <th>puertas</th> 
+                    <th>patente</th> 
+                    <th>Dueño Auto</th> 
+                    <th>Rut Dueño</th> 
+                    <th>--</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for auto in autos %}
+                <tr>
+                    <td>{{ auto.id }}
+                    <td>{{ auto.marca_auto }}</td>
+                    <td>{{ auto.ruedas }}</td>
+                    <td>{{ auto.puertas }}</td>
+                    <td>{{ auto.patente }}</td>   
+                    <td>{{ auto.dueño_auto }}</td>  
+                    <td>{{ auto.rut_dueño }}</td>  
+                    <td><a href="/actualizarAuto/ {{ auto.id }}" class="btn btn-success btn-sm">Actualizar></td>
+                    <td><a href="/eliminarAutos/ {{ auto.id }}" class="btn btn-success btn-sm">Eliminar</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        
+        <div class="alert alert-primary" role="alert">
+            <strong>No se encuentran autos en el sistema</strong>
+        </div>
+
+        {% endif%}
+
+        <a href="../" class = "btn btn-danger">Volver </a> <br>
+        <a href="../agregarAutos" class = "btn btn-info float-end">Agregar Autos</a> <br>
+        
+    </body>
+    </html>

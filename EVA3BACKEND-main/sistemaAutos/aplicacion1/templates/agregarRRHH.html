@@ -1,0 +1,17 @@
+<html>
+
+
+    <body class = "container mt-5">
+        <div class = "alert alert-info display-1 text-center">Registrar Personal de recursos humanos</div>
+
+        <form method='post'>
+            {{ form.as_p }}
+            {% csrf_token %} <br>
+        <button type= "sumbit" value="AGREGAR Personal"> <br>
+        </form><br>
+            <br>
+         
+
+    </body>
+    <a href="../ListadoRRHH" class="btn btn.info m-5">Personal Recursos humanos</a>
+    </html>

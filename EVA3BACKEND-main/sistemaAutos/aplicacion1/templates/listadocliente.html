@@ -1,0 +1,53 @@
+<html>
+
+
+    <body class="container mt-5">
+        <div class="alert alert-info display-1 text-center">Listado de clientes</div>
+
+        {% if listado %}
+
+        <table class ="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>id</id>
+                    <th>Nombre </th> 
+                    <th>Apellido paterno</th> 
+                    <th>Apellido materno</th> 
+                    <th>rut</th> 
+                    <th>Edad</th> 
+                    <th>Telefono</th> 
+                    <th>--</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for a in listado %}
+                <tr>
+                    <td>{{ a.id }}
+                    <td>{{ a.nombre_cliente }}</td>
+                    <td>{{ a.apellidoP_cliente }}</td>
+                    <td>{{ a.apellidoM_cliente }}</td>
+                    <td>{{ a.rut }}</td>   
+                    <td>{{ a.edad }}</td>  
+                    <td>{{ a.telefono }}</td>  
+                    <td><a href="/actualizarCliente/ {{ a.id }}" class="btn btn-success btn-sm">Actualizar></td>
+                    <td><a href="/eliminarCliente/ {{ a.id }}" class="btn btn-success btn-sm">Eliminar</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        
+        <div class="alert alert-primary" role="alert">
+            <strong>No se encuentran Clientes en el sistema</strong>
+        </div>
+
+        {% endif%}
+
+        <a href="../" class = "btn btn-danger">Volver </a> <br>
+        <a href="../agregarCliente" class = "btn btn-info float-end">Agregar cliente</a> <br>
+        
+    </body>
+    </html>
